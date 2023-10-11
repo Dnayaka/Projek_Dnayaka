@@ -17,14 +17,17 @@ def kasir():
 
     choice = input("Masukan Pesanan Anda: ")
     jumlah = float(input("Jumlah: "))
-    kroket = float(input("Harga Kroket Saat Ini: "))
-    Hasil = jumlah * kroket
     if choice == "1":
-        print("Harga: ", Hasil)
+        kroket = float(input("Harga Kroket Saat Ini: "))
+        print("Harga: ", jumlah * kroket)
+
     elif choice == "2":
-        print("Harga: ", Hasil)
+        Katsu = float(input("Harga Ayam Katsu Saat Ini: "))
+        print("Harga: ", jumlah * Katsu)
+
     elif choice == "3":
-        print("Harga: ", Hasil)
+        Srundeng = float(input("Harga Srundeng Saat Ini: "))
+        print("Harga: ", jumlah * Srundeng)
     p()
 
 def p():
