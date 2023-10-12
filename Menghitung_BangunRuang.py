@@ -28,12 +28,12 @@ def Bola():
     if pilih == "1":
         jari = float(input("Masukan Jari-Jari lingkaran: "))
         jumlah = 4 * 3.14 * jari * jari
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     elif pilih == "2":
         jari = float(input("Masukan Jari-Jari lingkaran: "))
         jumlah = 4/3 * 3.14 * jari * jari
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     else:
         print("Input tidak tersedia")
@@ -48,14 +48,14 @@ def Balok():
         lebar = float(input("Masukan Lebar Balok: "))
         tinggi = float(input("Masukan Tinggi Balok: "))
         jumlah = 2 * (panjang * lebar + panjang * tinggi + lebar * tinggi)
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     elif pilih == "2":
         panjang = float(input("Masukan Panjang Balok: "))
         lebar = float(input("Masukan Lebar Balok: "))
         tinggi = float(input("Masukan Tinggi Balok: "))
         jumlah = panjang * lebar * tinggi
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     else:
         print("Input tidak tersedia")
@@ -68,14 +68,14 @@ def kubus():
     if pilih == "1":
         sisi = float(input("Masukan Panjang Sisi Kubus: "))
         jumlah = 6 * sisi * sisi
-        print(jumlah)
+        print"Hasilnya Adalah: ", (jumlah)
         clear()
     elif pilih == "2":
         panjang = float(input("Masukan Panjang Kubus: "))
         lebar = float(input("Masukan Lebar Kubus: "))
         tinggi = float(input("Masukan Tinggi Kubus: "))
         jumlah = panjang * lebar * tinggi
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     else:
         print("Input tidak tersedia")
@@ -89,13 +89,13 @@ def tabung():
         Jari = float(input("Masukan Jari Jari Tabung: "))
         tinggi = float(input("Masukan Tinggi Tabung: "))
         jumlah = 2 * 3.14 * Jari * ( Jari * tinggi )
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     elif pilih == "2":
         Jari = float(input("Masukan Jari Jari Tabung: "))
         tinggi = float(input("Masukan Tinggi Tabung: "))
         jumlah = 3.14 * Jari * Jari * tinggi
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     else:
         print("Input tidak tersedia")
@@ -109,13 +109,13 @@ def kerucut():
         Jari = float(input("Masukan Jari Jari Kerucut: "))
         lukis = float(input("Masukan Garis Lukis Kerucut: "))
         jumlah = 3.14 * Jari * ( lukis + Jari )
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     elif pilih == "2":
         Jari = float(input("Masukan Jari Jari Kerucut: "))
         tinggi = float(input("Masukan Tinggi Kerucut: "))
         jumlah = 1/3 * 3.14 * Jari * Jari * tinggi
-        print(jumlah)
+        print("Hasilnya Adalah: ", jumlah)
         clear()
     else:
         print("Input tidak tersedia")
