@@ -3,8 +3,10 @@
 ##############################################
 import subprocess
 import sys
-
-
+import pyfiglet
+import os
+from plyer import notification
+import time
 def clear():
     input("Pencet Enter untuk kembali ke menu....")
     operating_system = sys.platform
@@ -15,32 +17,122 @@ def clear():
     menu()
 
 def menu():
-    print("\033[96m---------------------------------------------\n")
-    print("|            ▄︻デֆɛʀɮǟɢʊռǟ══━-            |")
-    print("|         Made Original By Dnayaka         |")
-    print("--------------------------------------------")
-    print("|                                          |")
-    print("|        1. Menghitung Bangun Ruang        |")
-    print("|        2. Menghitung Bangun Datar        |")
-    print("|             3. Konversi Suhu             |")
-    print("|                                          |")
-    print("--------------------------------------------")
+    print("""\033[96m
+ ########::'##::: ##::::'###::::'##:::'##::::'###::::'##:::'##::::'###::::
+ ##.... ##: ###:: ##:::'## ##:::. ##:'##::::'## ##::: ##::'##::::'## ##:::
+ ##:::: ##: ####: ##::'##:. ##:::. ####::::'##:. ##:: ##:'##::::'##:. ##::
+ ##:::: ##: ## ## ##:'##:::. ##:::. ##::::'##:::. ##: #####::::'##:::. ##:
+ ##:::: ##: ##. ####: #########:::: ##:::: #########: ##. ##::: #########:
+ ##:::: ##: ##:. ###: ##.... ##:::: ##:::: ##.... ##: ##:. ##:: ##.... ##:
+ ########:: ##::. ##: ##:::: ##:::: ##:::: ##:::: ##: ##::. ##: ##:::: ##:
+........:::..::::..::..:::::..:::::. .:::::..:::::..::..::::..::..:::::..::
+       :'######:::'#######::'########::'####:'##::: ##::'######:::
+       '##... ##:'##.... ##: ##.... ##:. ##:: ###:: ##:'##... ##::
+        ##:::..:: ##:::: ##: ##:::: ##:: ##:: ####: ##: ##:::..:::
+        ##::::::: ##:::: ##: ##:::: ##:: ##:: ## ## ##: ##::'####:
+        ##::::::: ##:::: ##: ##:::: ##:: ##:: ##. ####: ##::: ##::
+        ##::: ##: ##:::: ##: ##:::: ##:: ##:: ##:. ###: ##::: ##::
+       . ######::. #######:: ########::'####: ##::. ##:. ######:::
+       :......::::.......:::........:::....::..::::..:::......::::
+
+           ╔═══════════════════════════════════╗
+           ║         ♡◇♤     𝙈𝙀𝙉𝙐      ♤◇●     ║
+           ╚═══════════════════════════════════╝
+           ╔═══════════════════════════════════╗
+           ║    1. Menghitung Bangun Ruang     ║
+           ║    2. Menghitung Bangun Datar     ║
+           ║            3. Font 3D             ║
+           ║            4. Catatan             ║
+           ║                                   ║
+           ║           DNayaka Script          ║
+           ╚═══════════════════════════════════╝
+
+\n""")
     Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
 
     if Q == "1":
         Bangun_Ruang()
     if Q == "2":
         Bangun_Datar()
+    if Q == "3":
+        Font_3D()
+    if Q == "4":
+        notepad()
     else:
         print("Opsi Tidak Tersedia!!")
-        menu()
+        clear()
+
+def notepad():
+    def one():
+            with open("new.txt", 'r')as file:
+                P = file.read()
+                print(P)
+                file.close()
+            input("Lanjut══> ")
+            notepad()
+
+    def two():
+        P = input("Masukan Kata══> ")
+        with open("new.txt", 'a')as file:
+           file.write(P)
+           file.close()
+        input("Lanjut══> ")
+        notepad()
+
+    def three():
+        P1  = input("Masukan Kata Lama══> ")
+        P2  = input("Masukan Kata Baru══> ")
+        with open("new.txt", 'r')as file:
+           data = file.read()
+           file.close()
+        data = data.replace(P1, P2)
+        with open("new.txt", 'w')as file:
+           file.write(data)
+           file.close()
+        input("Lanjut══> ")
+        notepad()
+
+    def menu():
+        print("""
+
+           ╔╦═════════════════════════════════╦╗
+           ║║            Notepad++            ║║
+           ║║═════════════════════════════════║║
+           ║║        1. Lihat Catatan         ║║
+           ║║      2. Memasukan Catatan       ║║
+           ║║        3. Mengganti Kata        ║║
+           ╚╩═════════════════════════════════╩╝
+
+    """)
+    menu()
+    Q = input("Masukan Input══>: ")
+    if Q == "1":
+        one()
+    elif Q == "2":
+        two()
+    elif Q == "3":
+        three()
+    else:
+        input("[>]Command Tidak Tersedia")
+        notepad()
+
+def Font_3D():
+    kata = input("Masukan Kata ╚════> ")
+    result = pyfiglet.figlet_format(kata, font='banner3-D')
+    print(result)
+    clear()
 
 def Bangun_Ruang():
     def Bola():
-            print("---------------------------------------------")
-            print("|                 1. Luas                   |")
-            print("|                2. Volume                  |")
-            print("---------------------------------------------")
+            print("""
+           ╔═══════════════════════╗
+           ╚═══════════════════════╝
+           ╔═══════════════════════╗
+           ║        1. Luas        ║
+           ║       2. Volume       ║
+           ╚═══════════════════════╝
+
+""")
             pilih = input("Masukan input berupa nomor: ")
             if pilih == "1":
                 jari = float(input("Masukan Jari-Jari lingkaran: "))
@@ -57,10 +149,15 @@ def Bangun_Ruang():
                 clear()
 
     def Balok():
-        print("---------------------------------------------")
-        print("|                 1. Luas                   |")
-        print("|                2. Volume                  |")
-        print("---------------------------------------------")
+        print("""
+           ╔═══════════════════════╗
+           ╚═══════════════════════╝
+           ╔═══════════════════════╗
+           ║        1. Luas        ║
+           ║       2. Volume       ║
+           ╚═══════════════════════╝
+
+""")
         pilih = input("Masukan input berupa nomor: ")
         if pilih == "1":
             panjang = float(input("Masukan Panjang Balok: "))
@@ -81,10 +178,15 @@ def Bangun_Ruang():
             clear()
 
     def Kubus():
-        print("---------------------------------------------")
-        print("|                 1. Luas                   |")
-        print("|                2. Volume                  |")
-        print("---------------------------------------------")
+        print("""
+           ╔═══════════════════════╗
+           ╚═══════════════════════╝
+           ╔═══════════════════════╗
+           ║        1. Luas        ║
+           ║       2. Volume       ║
+           ╚═══════════════════════╝
+
+""")
         pilih = input("Masukan input berupa nomor: ")
         if pilih == "1":
             sisi = float(input("Masukan Panjang Sisi Kubus: "))
@@ -103,10 +205,15 @@ def Bangun_Ruang():
             clear() 
 
     def Tabung():
-        print("---------------------------------------------")
-        print("|                 1. Luas                   |")
-        print("|                2. Volume                  |")
-        print("---------------------------------------------")
+        print("""
+           ╔═══════════════════════╗
+           ╚═══════════════════════╝
+           ╔═══════════════════════╗
+           ║        1. Luas        ║
+           ║       2. Volume       ║
+           ╚═══════════════════════╝
+
+""")
         pilih = input("Masukan input berupa nomor: ")
         if pilih == "1":
             Jari = float(input("Masukan Jari Jari Tabung: "))
@@ -125,10 +232,15 @@ def Bangun_Ruang():
             clear() 
 
     def Kerucut():
-        print("---------------------------------------------")
-        print("|                 1. Luas                   |")
-        print("|                2. Volume                  |")
-        print("---------------------------------------------")
+        print("""
+           ╔═══════════════════════╗
+           ╚═══════════════════════╝
+           ╔═══════════════════════╗
+           ║        1. Luas        ║
+           ║       2. Volume       ║
+           ╚═══════════════════════╝
+
+""")
         pilih = input("Masukan input berupa nomor: ")
         if pilih == "1":
             Jari = float(input("Masukan Jari Jari Kerucut: "))
@@ -152,21 +264,22 @@ def Bangun_Ruang():
     def Prisma():
         print("Maafkan Saya Di Karenakan Rumus Prisma Terlalu Susah, Sehingga Membuat Bangun Ruang Prisma Tidak Tersedia")
     
-    print("---------------------------------------------")
-    print("|           ▄︻デɮǟռɢʊռ_ʀʊǟռɢ══━一          |")
-    print("|          Made Original By Dnayaka         |")
-    print("--------------------------------------------|")
-    print("|                                           |")
-    print("|                 1. Bola                   |")
-    print("|                 2. Balok                  |")
-    print("|                 3. Kubus                  |")
-    print("|                4. Tabung                  |")
-    print("|                5. Kerucut                 |")
-    print("|         6. Limas (Tidak Tersedia)         |")
-    print("|        7. Prisma (Tidak Tersedia)         |")
-    print("|                0. Kembali                 |")
-    print("|                                           |")
-    print("---------------------------------------------")
+    print("""
+           ╔═══════════════════════════════════════════╗
+           ║           ▄︻デɮǟռɢʊռ_ʀʊǟռɢ══━一          ║
+           ║          Made Original By Dnayaka                ║
+           ╚═══════════════════════════════════════════╝
+           ╔═══════════════════════════════════════════╗
+           ║                 1. Bola                   ║
+           ║                 2. Balok                  ║
+           ║                 3. Kubus                  ║
+           ║                4. Tabung                  ║
+           ║                5. Kerucut                 ║
+           ║         6. Limas (Tidak Tersedia)         ║
+           ║        7. Prisma (Tidak Tersedia)         ║
+           ║                0. Kembali                 ║
+           ║                                           ║
+           ╚═══════════════════════════════════════════╝""")
     Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
 
     if Q == "1":
@@ -184,21 +297,21 @@ def Bangun_Ruang():
     elif Q == "7":
         Prisma()
     elif Q == "0":
+        clear()
         menu()
     else:
         print("Opsi Tidak Tersedia!!")
 
 def Bangun_Datar():
     def Lingkaran():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
+        print("╔═══════════════════════════════════════════╗")
+        print("║              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                 ║")
+        print("║          Made Original By Dnayaka         ║")
+        print("╚═══════════════════════════════════════════╝")
+        print("╔═══════════════════════════════════════════╗")
+        print("║                1. Luas                    ║")
+        print("║               2. Keliling                 ║")
+        print("╚═══════════════════════════════════════════╝")
         Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
         if Q == "1":
             Jari = float(input("Masukan Jari Jari: "))
@@ -215,15 +328,14 @@ def Bangun_Datar():
             clear()
 
     def Persegi_Panjang():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
+        print("╔═══════════════════════════════════════════╗")
+        print("║              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                 ║")
+        print("║          Made Original By Dnayaka         ║")
+        print("╚═══════════════════════════════════════════╝")
+        print("╔═══════════════════════════════════════════╗")
+        print("║                1. Luas                    ║")
+        print("║               2. Keliling                 ║")
+        print("╚═══════════════════════════════════════════╝")
         Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
         if Q == "1":
             Panjang = float(input("Masukan Panjang: "))
@@ -240,15 +352,14 @@ def Bangun_Datar():
             print("Input Tidak Tersedia!!")
     
     def Persegi():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
+        print("╔═══════════════════════════════════════════╗")
+        print("║              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                 ║")
+        print("║          Made Original By Dnayaka         ║")
+        print("╚═══════════════════════════════════════════╝")
+        print("╔═══════════════════════════════════════════╗")
+        print("║                1. Luas                    ║")
+        print("║               2. Keliling                 ║")
+        print("╚═══════════════════════════════════════════╝")
         Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
         if Q == "1":
             Sisi = float(input("Masukan Panjang Sisi: "))
@@ -263,15 +374,14 @@ def Bangun_Datar():
             clear
 
     def Segitiga():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
+        print("╔═══════════════════════════════════════════╗")
+        print("║              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                 ║")
+        print("║          Made Original By Dnayaka         ║")
+        print("╚═══════════════════════════════════════════╝")
+        print("╔═══════════════════════════════════════════╗")
+        print("║                1. Luas                    ║")
+        print("║               2. Keliling                 ║")
+        print("╚═══════════════════════════════════════════╝")
         Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
         if Q == "1":    
             Alas = float(input("Masukan Panjang Alas: "))
@@ -289,15 +399,14 @@ def Bangun_Datar():
         print("Hasil: ", jumlah)
     
     def Jajar_Genjang():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
+        print("╔═══════════════════════════════════════════╗")
+        print("║              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                 ║")
+        print("║          Made Original By Dnayaka         ║")
+        print("╚═══════════════════════════════════════════╝")
+        print("╔═══════════════════════════════════════════╗")
+        print("║                1. Luas                    ║")
+        print("║               2. Keliling                 ║")
+        print("╚═══════════════════════════════════════════╝")
         Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
         if Q == "1":
             Alas = float(input("Masukan Alas: "))
@@ -315,15 +424,14 @@ def Bangun_Datar():
             clear()
 
     def Belah_Ketupat():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
+        print("╔═══════════════════════════════════════════╗")
+        print("║              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                 ║")
+        print("║          Made Original By Dnayaka         ║")
+        print("╚═══════════════════════════════════════════╝")
+        print("╔═══════════════════════════════════════════╗")
+        print("║                1. Luas                    ║")
+        print("║               2. Keliling                 ║")
+        print("╚═══════════════════════════════════════════╝")
         Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
         if Q == "1":
             D1 = float(input("Masukan Diagonal Satu: "))
@@ -342,19 +450,6 @@ def Bangun_Datar():
         else:
             print("Opsi Tidak Tersedia!!")
 
-    def P_Datar():
-        print("---------------------------------------------")
-        print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
-        print("|          Made Original By Dnayaka         |")
-        print("--------------------------------------------|")
-        print("|                                           |")
-        print("|                1. Luas                    |")
-        print("|               2. Keliling                 |")
-        print("|                                           |")
-        print("---------------------------------------------")
-        Q = input("Pilih Opsi Sesuai Nomor Yang Ada Di Atas: ")
-
-
     print("---------------------------------------------")
     print("|              𝕭𝖆𝖓𝖌𝖚𝖓 𝕯𝖆𝖙𝖆𝖗                |")
     print("|          Made Original By Dnayaka         |")
@@ -366,8 +461,6 @@ def Bangun_Datar():
     print("|               4. Segitiga                 |")
     print("|             5. Jajar Genjang              |")
     print("|             6. Belah Ketupat              |")
-    print("|                7. Prisma                  |")
-    print("|               8. Segilima                 |")
     print("|                0. Kembali                 |")
     print("|                                           |")
     print("---------------------------------------------")
@@ -385,6 +478,7 @@ def Bangun_Datar():
     elif Q == "6":
         Belah_Ketupat()
     elif Q == "0":
+        clear()
         menu()
     else:
         print("Opsi Tidak Tersedia!!")
@@ -393,12 +487,12 @@ def Bangun_Datar():
 
 
 def username():
-    User = input("Masukan Username: ")
+    User = input("\033[96mMasukan Username: ")
     if User == "DSilent":
-        print("\033[42mUsername Benar!\033[96m")
+        print("\033[96mUsername Benar!")
         password()
     elif User == "Admin":
-        print("\033[42mMode Admin Activated")
+        input("\033[96mMode Admin Activated")
         operating_system = sys.platform
         if operating_system == 'win32':
             input("Program Not Supported!!")
@@ -406,16 +500,16 @@ def username():
         if operating_system == 'linux' or operating_system == 'darwin':
             subprocess.run('nano main.py', shell=True)
     else:
-        print("\033[41mUsername Salah!")
+        print("\033[96mUsername Salah!")
         username()
 
 def password():
     Password = input("Masukan Password: ")
     if Password == "01122011":
-        print("\033[42mPassword Benar!\033[96m")
-        menu()
+        print("\033[96mPassword Benar!")
+        clear()
     else:
-        print("\033[41mPassword Salah!")
+        print("\033[96mPassword Salah!")
         password()
 
 
