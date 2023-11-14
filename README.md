@@ -1,2 +1,3 @@
-# Projek Dnayaka
-Letak semua projek Dnayaka terletak di sini, di buat murni oleh Dnayaka.
+<p align="center"> 
+  <img src=" https://capsule-render.vercel.app/api?text=Hai Semuanya!🕹️&animation=fadeIn&type=waving&color=gradient&height=100"/> 
+</p>
